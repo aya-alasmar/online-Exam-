@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> q7</title>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            setInterval(countdown,1000);
+
+           });
+        var timer=25;
+        function countdown() {
+            $("#timer").html(timer +"s ");
+             var ans7=$("input[name='answer']:checked").val();
+            localStorage.setItem("ans7",ans7);
+            timer--;
+            if(timer==0){
+                window.location.href="q8.html";
+            }
+        }
+
+    </script>
+    <style type="text/css">
+    	
+    </style>
+</head>
+<body class="m-5">
+	<h4>Q7 :Add the padding values, so that it has 10 pixels to the top, 15 pixels to the bottom, 5 pixels to the right, 10 pixels to the left: </h4>
+	<span class="d-block"><input type="radio" name="answer" id="option1" value="padding:10px" checked="true"> padding:10px</span>
+    <span class="d-block"><input type="radio" name="answer" id="option2" value="padding:10px 5px"> padding:10px 5px</span>
+    <span class="d-block"><input type="radio" name="answer" id="option3" value="padding:10px 15px 5px 10px"> padding:10px 15px 5px 10px </span>
+    <span class="d-block"><input type="radio" name="answer" id="option4" value="padding:10px 5px 15px 10px"> padding:10px 5px 15px 10px </span>
+    <button class="btn btn-lg  btn-success m-3" id="btn" onclick="window.location.href='q8.html'">next</button>
+    <span id="timer"></span>
+
+</body>
+</html>

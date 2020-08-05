@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> q5</title>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+            setInterval(countdown,1000);
+    });
+    var timer=25;
+    function countdown() {
+        $("#timer").html(timer +"s ");
+         var ans5=$("input[name='answer']:checked").val();
+        localStorage.setItem("ans5",ans5);
+        timer--;
+        if(timer==0){
+            window.location.href="q6.html";
+        }
+    }
+
+    </script>
+    <style type="text/css">
+    	
+    </style>
+</head>
+<body class="m-5">
+	<h4>Q5: Choose the correct HTML tag for the smallest heading: </h4>
+	<span class="d-block"><input type="radio" name="answer" id="option1" value="h1" checked="true">  h1</span>
+    <span class="d-block"><input type="radio" name="answer" id="option2" value="h6">  h6</span>
+    <span class="d-block"><input type="radio" name="answer" id="option3" value="heading"> heading</span>
+    <span class="d-block"><input type="radio" name="answer" id="option4" value="head">  head</span>
+    <button class="btn btn-lg  btn-success m-3" id="btn" onclick="window.location.href='q6.html'">next</button>
+    <span id="timer"></span>
+</body>
+</html>

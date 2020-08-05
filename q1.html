@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> q1</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			setInterval(countdown,1000);
+			});
+		var timer=25;
+		function countdown() {
+			var ans1=$("input[name='answer']:checked").val();
+    	    localStorage.setItem("ans1",ans1);
+			$("#timer").html(timer +"s ");
+			timer--;
+			if(timer==0){
+				window.location.href="q2.html";
+			}
+		}
+
+	</script>
+	<style type="text/css">
+
+	</style>
+</head>
+<body class="m-5">
+	<h4>Q1 : What does HTML stand for?</h4>
+	<span class="d-block"><input type="radio" id="option1" name="answer" value="Hyperlinks and Text Markup Language" checked="true">Hyperlinks and Text Markup Language</span>
+	<span class="d-block"><input type="radio" id="option2" name="answer" value="Home Tool Markup Language">Home Tool Markup Language</span>
+	<span class="d-block"><input type="radio" id="option3" name="answer" value="Hyper Text Markup Language">Hyper Text Markup Language</span>
+	<span class="d-block"><input type="radio" id="option4" name="answer" value="Hyper-Phrase Marketing Language">Hyper-Phrase Marketing Language</span>
+	<button class="btn btn-lg  btn-success m-3" id="btn" onclick="window.location.href='q2.html'">next</button>
+    <span id="timer"></span>
+    
+
+</body>
+</html>

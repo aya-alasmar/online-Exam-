@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>online exam</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+            var mark=0;
+            $("#txt").append(localStorage.getItem("name"));
+          
+            for (var i = 1; i <=10 ; i++) {
+              var x=localStorage.getItem("ans"+i);
+              var y=($("#true"+i)).text();
+              if(x== y){
+               $("#q"+i).css("color","green");
+               mark++;
+              }
+              else{
+                  $("#q"+i).css("color","red");
+              }
+              $("#q"+i).html(x);
+
+            }
+            $("#txt2").html(" your grade: "+mark+"/10");
+        });
+    </script>
+    <style type="text/css">
+    	label{ font-size: 18px; }
+    	h1{font-size: 50px;}
+    </style>
+</head>
+<body >
+    <h1 class=" container text-center m-3 p-3 mt-5 pt-5" id="txt">
+    	thank you 
+    </h1>
+    <h2 id="txt2" class=" container text-center m-3 p-3 ">
+        
+    </h2>
+    <table  class="table border">
+        <tr>
+            <td width="600px" class="font-weight-bolder">Question</td>
+            <td width="300px" class="font-weight-bolder">Correct answer</td>
+            <td width="300px" class="font-weight-bolder">Your answer</td>
+        </tr>
+        <tr>
+            <td class="font-weight-bolder">Q1 : What does HTML stand for?</td>
+            <td  id="true1">Hyper Text Markup Language</td>
+            <td id="q1"></td>
+        </tr>
+           <tr>
+            <td class="font-weight-bolder">Q2 : What does the href attribute contain?</td>
+            <td  id="true2">the URL of the page to be transferred</td>
+            <td id="q2"></td>
+        </tr>
+           <tr>
+            <td class="font-weight-bolder">Q3: Choose the correct HTML tag for the largest heading:</td>
+            <td id="true3">h1</td>
+            <td id="q3"></td>
+        </tr>
+           <tr>
+            <td class="font-weight-bolder">Q4: Which sentance  make the text "First paragraph" a comment</td>
+            <td id="true4">< !--First paragraph--></td>
+            <td id="q4"></td>
+        </tr>
+           <tr>
+            <td class="font-weight-bolder">Q5: Choose the correct HTML tag for the smallest heading:</td>
+            <td id="true5">h6</td>
+            <td id="q5"></td>
+        </tr>
+           <tr>
+            <td class="font-weight-bolder">Q6 :From the 3 types of styling, which one is the most useful in terms of website optimization?</td>
+            <td id="true6">external</td>
+            <td id="q6"></td>
+        </tr>
+           <tr>
+            <td class="font-weight-bolder">Q7 :Add the padding values, so that it has 10 pixels to the top, 15 pixels to the bottom, 5 pixels to the right, 10 pixels to the left:</td>
+            <td id="true7">padding:10px 5px 15px 10px</td>
+            <td id="q7"></td>
+        </tr>
+           <tr>
+            <td class="font-weight-bolder">Q8 :What's the result of the expression var1&&var2, if var1=true and var2=false?</td>
+            <td id="true8">False</td>
+            <td id="q8"></td>
+        </tr>
+        
+           <tr>
+            <td class="font-weight-bolder">Q9 :What are the three core languages in web pages? </td>
+            <td id="true9">CSS,HTML,javascript</td>
+            <td id="q9"></td>
+        </tr>
+           <tr>
+            <td class="font-weight-bolder">Q10 :What tag contains the JavaScript code? </td>
+            <td id="true10">script</td>
+            <td id="q10"></td>
+        </tr>
+
+
+
+    </table>
+
+ 
+</body>
+</html>
